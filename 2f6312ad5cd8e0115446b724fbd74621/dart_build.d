@@ -1,0 +1,1 @@
+ /Users/bruno/Documents/MarceloImóveis/marceloimob_gestao/build/2f6312ad5cd8e0115446b724fbd74621/dart_build_result.json:  /Users/bruno/Documents/MarceloImóveis/marceloimob_gestao/.dart_tool/package_config.json /Users/bruno/Documents/MarceloImóveis/marceloimob_gestao/pubspec.yaml /opt/homebrew/share/flutter/bin/cache/dart-sdk/version
