@@ -35,8 +35,7 @@ if (!window._flutter) {
 }
 _flutter.buildConfig = {"engineRevision":"425cfb54d01a9472b3e81d9e76fd63a4a44cfbcb","builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
-_flutter.loader.load({
-  serviceWorkerSettings: {
-    serviceWorkerVersion: "2337483584" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */
-  }
-});
+
+// Sem o service worker do Flutter (descontinuado: ele se desregistra e
+// derrubaria o sw.js do app instalável).
+_flutter.loader.load();
