@@ -18,12 +18,13 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Marcelo imóveis">
+  <meta name="description" content="Sistema de gestão imobiliária Marcelo Bonifácio">
+  <meta name="theme-color" content="#020B22">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="marceloimob_gestao">
+  <meta name="apple-mobile-web-app-title" content="MB Gestão">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
@@ -53,6 +54,37 @@
         }
         return originalPlay.apply(this, arguments);
       };
+    })();
+  </script>
+  <script>
+    // Instalação do app (PWA) no Android: o Chrome oferece o convite
+    // (beforeinstallprompt), que o menu "Baixar app" abre quando o usuário
+    // pede.
+    (function () {
+      var convite = null;
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        convite = e;
+      });
+      window.addEventListener('appinstalled', function () {
+        convite = null;
+      });
+      window.mbInstalacaoDisponivel = function () {
+        return convite !== null;
+      };
+      window.mbInstalarApp = async function () {
+        if (!convite) return 'indisponivel';
+        var c = convite;
+        convite = null;
+        await c.prompt();
+        var escolha = await c.userChoice;
+        return escolha.outcome;
+      };
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('sw.js').catch(function () {});
+        });
+      }
     })();
   </script>
   <script src="flutter_bootstrap.js" async></script>

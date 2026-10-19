@@ -1,12 +1,19 @@
 {
-    "name": "marceloimob_gestao",
-    "short_name": "marceloimob_gestao",
-    "start_url": ".",
+    "id": "./",
+    "name": "Marcelo Bonifácio - Gestão",
+    "short_name": "MB Gestão",
+    "description": "Sistema de gestão imobiliária Marcelo Bonifácio",
+    "lang": "pt-BR",
+    "start_url": "./",
+    "scope": "./",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "Marcelo imóveis",
-    "orientation": "portrait-primary",
+    "orientation": "any",
+    "background_color": "#020B22",
+    "theme_color": "#020B22",
+    "categories": [
+        "business",
+        "productivity"
+    ],
     "prefer_related_applications": false,
     "icons": [
         {
