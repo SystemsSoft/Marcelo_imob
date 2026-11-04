@@ -19,7 +19,7 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Sistema de gestão imobiliária Marcelo Bonifácio">
-  <meta name="theme-color" content="#020B22">
+  <meta name="theme-color" content="#31467A">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -32,8 +32,16 @@
 
   <title>Marcelo Bonifácio - Gestão</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    /* O mesmo degradê do login e da abertura (degradeEntrada), já no
+       primeiro instante: sem tela escura ou branca enquanto o app carrega. */
+    html, body {
+      min-height: 100%;
+      background: #31467A linear-gradient(to bottom left, #2C344C, #31467A 45%) fixed;
+    }
+  </style>
 </head>
-<body style="background:#020B22">
+<body>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
@@ -42,20 +50,6 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
-  <script>
-    // O video_player web só zera o volume; o navegador exige o atributo
-    // `muted` para liberar o autoplay do vídeo de abertura.
-    (function () {
-      var originalPlay = HTMLMediaElement.prototype.play;
-      HTMLMediaElement.prototype.play = function () {
-        if (this.currentSrc && this.currentSrc.indexOf('splash_marcelo_bonifacio') !== -1) {
-          this.muted = true;
-          this.setAttribute('playsinline', '');
-        }
-        return originalPlay.apply(this, arguments);
-      };
-    })();
-  </script>
   <script>
     // Instalação do app (PWA) no Android: o Chrome oferece o convite
     // (beforeinstallprompt), que o menu "Baixar app" abre quando o usuário
